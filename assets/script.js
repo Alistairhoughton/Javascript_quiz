@@ -39,6 +39,7 @@
 // var wrongAnswer = false;
 
 var score = ('0');
+var currentQuestionListIndex = [0]
 
 
 var questionElement = document.getElementById('questiontext')
@@ -58,6 +59,36 @@ var questionlist = [
 
 console.log(questionlist);
 
+// {
+//     question: "what is 3+3",
+//     answers:[
+//         {text:'6', correct: true},
+//         {text:'20', incorrest: false}, //idk if this is a boolean????
+//         {text:'30', incorrest: false},
+//         {text:'40', incorrest: false},
+//     ]
+// }
+
+// {
+//     question: "what is 4+4",
+//     answers:[
+//         {text:'10', correct: false},
+//         {text:'20', incorrest: false}, //idk if this is a boolean????
+//         {text:'8', incorrest: true},
+//         {text:'40', incorrest: false},
+//     ]
+// }
+
+// {
+//     question: "what is 5+5",
+//     answers:[
+//         {text:'90', correct: false},
+//         {text:'70', incorrest: false}, //idk if this is a boolean????
+//         {text:'40', incorrest: false},
+//         {text:'10', incorrest: true},
+//     ]
+// }
+
 //load in question one when start is clicked. text.content. and show buttons? 
 
 //when start button is clicked, bring in the question and the answers. 
@@ -75,7 +106,7 @@ function startGame () {
 }
 
 function showQuestion (question) {
-    questionElement.innerText =  questionlist.question;
+    questionElement.innerText =  questionlist[0].question;
 } 
 
 showQuestion()
