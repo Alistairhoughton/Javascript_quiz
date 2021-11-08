@@ -14,8 +14,8 @@ padding:10px
 }
 
 .header > * {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .maincolumn {
@@ -26,7 +26,29 @@ padding:10px
     text-align: center;
 }
 
+.startcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 .btn {
-    margin: 50px;
+    background-color: rgb(53, 53, 139);
+    color: white;
+    border-style: none;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    margin: 20px;
     width: 200px;
+}
+
+.btn:hover {
+    background-color: rgb(76, 76, 214);
+}
+
+.hide {
+    display: none;
 }
