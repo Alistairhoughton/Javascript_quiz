@@ -1,7 +1,7 @@
 html {
     margin: 0;
     padding: 0;
-    
+    font-family: 'Lato', sans-serif;
 }
 
 .header {
@@ -9,8 +9,19 @@ display: flex;
 flex-direction: row;
 flex-wrap: nowrap;
 align-items: center;
-justify-content: flex-start;
-padding:10px
+justify-content: space-evenly ;
+padding:10px;
+margin-left: 60px;
+margin-right: 200px;
+}
+
+h1 {
+    color: salmon;
+    font-weight: bolder;
+}
+
+.scoretext {
+    color: seagreen;
 }
 
 .header > * {
@@ -24,6 +35,7 @@ padding:10px
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 5%;
 }
 
 .startcontainer {
@@ -32,6 +44,7 @@ padding:10px
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 5%;
 }
 
 .btn {
@@ -51,4 +64,13 @@ padding:10px
 
 .hide {
     display: none;
+}
+
+.timertext {
+    font-size: 20px;
+    color: slategray;
+}
+
+p {
+    font-size: 30px;
 }

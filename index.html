@@ -6,16 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Quiz</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">       
 </head>
 <body>
     <header class="header">
+
+        <h2 class="scoretext">
+            View highscore
+            </h2>
         <h1>
             Javascript quiz
         </h1>
-        <h2>
-        View highscore
-        </h2>
-        <div class="timer">
+        
+        <div class="timertext">
             <p>
             60    
             </p>
@@ -31,15 +36,18 @@
 
     <main id="questioncontainer" class=" hide">
         <section class="maincolumn">
-            <p id="questiontext">Example question</p>
-            <button id="answer--btn" class="button1, btn">button1</button>
+
+            
+            <p id="questiontext">Example Question</p>
+            <div class='buttoncontainer' id='answer--btn'>
+            <!-- <button id="answer--btn" class="button1, btn">button1</button>
             <br>
             <button id="answer--btn" class="button2, btn">button2</button>
             <br>
             <button id="answer--btn" class="button3, btn">button3</button>
             <br>
-            <button id="answer--btn" class="button4, btn">button4</button>
-
+            <button id="answer--btn" class="button4, btn">button4</button> -->
+            </div>
         </section>
     </main>
 
@@ -47,6 +55,6 @@
 
 
 
-    <script src="assets/script.js"></script>
+    <script src="assets/script3.js"></script>
 </body>
 </html>

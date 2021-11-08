@@ -1,4 +1,4 @@
-//need to star the quiz. 
+//need to start the quiz. 
 //store answers in variables
 //have the timer function ready
 
@@ -13,13 +13,6 @@
 //have a highscore page ready to load anytime. (do I make this on a new page?)#
 
 //questions
-
-
-//this hid my text for some reason??????
-
-// document.querySelector('questiontext'); //use this to change the text in the doc 
-// questiontext = document.getElementById('questiontext');
-// questiontext.textContent = questionOne;
 
 // need a score 10 points for a right answer, -5 points for a wrong answer. starts at 0. is it a string or array?
 
@@ -94,8 +87,9 @@ console.log(questionlist);
 //when start button is clicked, bring in the question and the answers. 
 //I think i need a .value as this value property sets or returns the value of the value attribute of a text field.
 
-let startButton = document.getElementById('startcontainerid')
+let startButton = document.getElementById('start__btn')
 let questionButton = document.getElementById('questioncontainer')
+let startContainer = document.getElementById('startcontainerid')
 
 startButton.addEventListener('click', startGame);
 
@@ -103,6 +97,7 @@ function startGame () {
     console.log('started')
     startButton.classList.add('hide');
     questionButton.classList.remove('hide');
+    startContainer.classList.add('hide');
 }
 
 function showQuestion (question) {
