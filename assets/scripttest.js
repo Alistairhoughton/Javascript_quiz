@@ -54,6 +54,7 @@ function showQuestion () {
         var currentQs = questionlist[currentQsIndex]
         questionElement.innerText = currentQs.question;
         console.log(currentQs);
+        answerButtonsElement.innerHTML = '';
         currentQs.answers.forEach(answer => {
         const button = document.createElement('button')
         button.textContent = answer;
@@ -67,9 +68,11 @@ function showQuestion () {
 
 // ======================================================================== Reset function.
 
-function resetState () {
-    
-}
+// var reset = ('')
+
+// function resetState () {
+//     answerButtonsElement.innerHTML(reset)
+// }
 
 
 
@@ -111,11 +114,13 @@ function checkAnswer(event){
 
 
 function setTimer(){
-
     timercountdowntext.textContent = ""
+}
 
 
 
+function endGame(){
+    
 }
 
 
