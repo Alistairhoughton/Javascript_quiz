@@ -50,29 +50,11 @@ function startGame () {
 //===========================================
 //=========================================== Show question function
 
-//method 1
-
-// function showQuestion () {
-//     var currentQs = questionlist[currentQsIndex]
-//     questionElement.innerText = currentQs.question;
-//     for (var i = 0; i < currentQs.length; i++) {
-//     //     console.log('insidecreatebutton')
-//     //     const button = document.createElement('button')
-//     //     button.innerText = currentQs.answers[i]
-//     //     button.classList.add('btn')
-//     //     button.addEventListener('click', selectAnswer)
-//     //     answerButtonsElement.appendChild(button);
-//     // } 
-
-// ============================================================= why does this not work?
-
-// ============================================================== Method 2
-
 function showQuestion () {
         var currentQs = questionlist[currentQsIndex]
         questionElement.innerText = currentQs.question;
         console.log(currentQs);
-    currentQs.answers.forEach(answer => {
+        currentQs.answers.forEach(answer => {
         const button = document.createElement('button')
         button.textContent = answer;
         button.classList.add('btn')
@@ -81,24 +63,17 @@ function showQuestion () {
     })
 }
 
-// ========================================================================why does this not work?
 
 
+// ======================================================================== Reset function.
 
-// function showQuestion () {
-//     var currentQs = questionlist[currentQsIndex]
-//     questionElement.innerText = currentQs.question;
-//     currentQs.answers.forEach(function (answers, i) {
+function resetState () {
     
-//         var currentChoice = document.createElement('button');
-//         currentChoice.setAttribute('class','btn');
-//         currentChoice.setAttribute('value', answers);
-//         currentChoice.textContent = i+1+'. '+ answers;
-//         currentChoice.addEventListener('click', checkanswer);
-//         answerButtonsElement.appendChild(currentChoice);
-//     })
-// }
+}
 
+
+
+// ===========================================================================================
 function checkanswer() {
     console.log('checkanswer');
 }
