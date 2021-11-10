@@ -23,7 +23,7 @@ let questionlist = [
 
 let currentQsIndex = 0;
 let time = questionlist.length * 10
-var timerId;
+// var timerId;
 
 // ================================= DOM variables
 
@@ -32,6 +32,7 @@ var answerButtonsElement = document.getElementById('answer--btn')
 let startButton = document.getElementById('start__btn')
 let questionButton = document.getElementById('questioncontainer')
 let startContainer = document.getElementById('startcontainerid')
+let timerCountdown = document.getElementById('timercountdowntext')
 
 
 
@@ -43,7 +44,7 @@ function startGame () {
     questionButton.classList.remove('hide');
     startContainer.classList.add('hide');
 
-    // timerId = setInterval(clockTick, 1000) clock was broken
+    
     showQuestion();
 }
 
@@ -86,7 +87,6 @@ function checkanswer() {
 
 let seconds = 60
 let score = 0
-let incorrect = 0
 
 
 function checkAnswer(event){
@@ -102,7 +102,7 @@ function checkAnswer(event){
         alert('incorrect')
         score -=5;
     }
-
+    console.log(score);
     currentQsIndex++
     if(currentQsIndex === questionlist.length){
         endGame();
@@ -113,11 +113,13 @@ function checkAnswer(event){
 
 
 
+
+
 function setTimer(){
-    timercountdowntext.textContent = ""
+    timerCountdown.textContent = ""
 }
 
-
+// hide the buttons display the score and a form to submit intials
 
 function endGame(){
     
@@ -130,3 +132,6 @@ function endGame(){
 // ================================== Event Listener
 
 startButton.addEventListener('click', startGame);
+
+
+//timer, score, highscore page
