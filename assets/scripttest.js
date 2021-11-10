@@ -21,18 +21,19 @@ let questionlist = [
     },
 ]
 
-let currentQsIndex = 0;
-let time = questionlist.length * 10
+// let time = questionlist.length * 10
 // var timerId;
 
 // ================================= DOM variables
 
-var questionElement = document.getElementById('questiontext')
-var answerButtonsElement = document.getElementById('answer--btn')
+var questionElement = document.getElementById('questiontext');
+var answerButtonsElement = document.getElementById('answer--btn');
 let startButton = document.getElementById('start__btn')
-let questionButton = document.getElementById('questioncontainer')
-let startContainer = document.getElementById('startcontainerid')
-let timerCountdown = document.getElementById('timercountdowntext')
+let questionButton = document.getElementById('questioncontainer');
+let startContainer = document.getElementById('startcontainerid');
+let timerCountdown = document.getElementById('timercountdowntext');
+let scoreText = document.getElementById('scorecounttext');
+let currentQsIndex = 0;
 
 
 
@@ -44,7 +45,7 @@ function startGame () {
     questionButton.classList.remove('hide');
     startContainer.classList.add('hide');
 
-    
+    startTimerCount();
     showQuestion();
 }
 
@@ -85,7 +86,7 @@ function checkanswer() {
 // ================================================================================
 //  ===============================================================================//function for clicking on the questions
 
-let seconds = 60
+
 let score = 0
 
 
@@ -109,20 +110,23 @@ function checkAnswer(event){
     } else {
         showQuestion();
     }
+    updateScore();
+}
+
+
+function updateScore() {
+
+scoreText.textContent = 'Score =' + score;
+
 }
 
 
 
-
-
-function setTimer(){
-    timerCountdown.textContent = ""
-}
 
 // hide the buttons display the score and a form to submit intials
 
 function endGame(){
-    
+
 }
 
 
@@ -135,3 +139,35 @@ startButton.addEventListener('click', startGame);
 
 
 //timer, score, highscore page
+
+
+
+
+
+
+
+
+
+
+
+
+var startTimerCount = function() {
+
+    
+    
+    let timerValue = 60
+    
+    var timerMinusSeconds = function (){
+        timerValue --
+        
+        let timerCountdown = document.getElementById('timercountdowntext');
+        timerCountdown.innerHTML = "Time =" + timerValue;
+        
+        if (timerValue == 0){
+            clearInterval(timerDown)
+        }
+    }
+    
+    const timerDown = setInterval(timerMinusSeconds,1000)
+}
+
