@@ -114,12 +114,17 @@ function checkAnswer(event){
 }
 
 
+
 function updateScore() {
-
 scoreText.textContent = 'Score =' + score;
-
 }
 
+// ===================================================================== local storage
+
+const saveToLocalStorage = () => {
+    localStorage.setItem('score', score);
+
+};
 
 
 
