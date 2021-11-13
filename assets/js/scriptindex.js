@@ -19,6 +19,11 @@ let questionlist = [
             answers: ['25','20', '10', '100'],
             correctAnswer: '10'
     },
+    // {
+    //     question:'test',
+    //         answers: ['0'],
+    //         correctAnswer: 'test'
+    // },
 ]
 
 // let time = questionlist.length * 10
@@ -29,11 +34,17 @@ let questionlist = [
 var questionElement = document.getElementById('questiontext');
 var answerButtonsElement = document.getElementById('answer--btn');
 let startButton = document.getElementById('start__btn')
-let questionButton = document.getElementById('questioncontainer');
+let questionContainer = document.getElementById('questionContainer');
 let startContainer = document.getElementById('startcontainerid');
 let timerCountdown = document.getElementById('timercountdowntext');
 let scoreText = document.getElementById('scorecounttext');
 let currentQsIndex = 0;
+const gameOverScreen = document.getElementById('gameOverScreen')
+let maincolumn = document.getElementById('maincolumn')
+const userScoretext = document.getElementById('GameOverScoreID')
+let timerValue = 60
+let score = 0
+
 
 
 
@@ -42,7 +53,7 @@ let currentQsIndex = 0;
 
 function startGame () {
     console.log('started')
-    questionButton.classList.remove('hide');
+    questionContainer.classList.remove('hide');
     startContainer.classList.add('hide');
 
     startTimerCount();
@@ -53,7 +64,9 @@ function startGame () {
 //=========================================== Show question function
 
 function showQuestion () {
+    
         var currentQs = questionlist[currentQsIndex]
+        console.log("the current question index is " + currentQsIndex)
         questionElement.innerText = currentQs.question;
         console.log(currentQs);
         answerButtonsElement.innerHTML = '';
@@ -69,15 +82,6 @@ function showQuestion () {
 
 
 // ======================================================================== Reset function.
-
-// var reset = ('')
-
-// function resetState () {
-//     answerButtonsElement.innerHTML(reset)
-// }
-
-
-
 // ===========================================================================================
 function checkanswer() {
     console.log('checkanswer');
@@ -87,7 +91,6 @@ function checkanswer() {
 //  ===============================================================================//function for clicking on the questions
 
 
-let score = 0
 
 
 function checkAnswer(event){
@@ -97,47 +100,68 @@ function checkAnswer(event){
     
     if  (currentQ && currentQ.correctAnswer === event.target.textContent) {
 
-        alert('correct')
+        // alert('correct')
         score += 10;
     } else {
-        alert('incorrect')
+        // alert('incorrect')
         score -=5;
+        timerValue = timerValue - 5
     }
     console.log(score);
     currentQsIndex++
     if(currentQsIndex === questionlist.length){
-        endGame();
+        endGameI();
     } else {
         showQuestion();
     }
     updateScore();
+
+    userScoretext.textContent = 'Your Score for the quiz is ' + score;
 }
 
 
-
-function updateScore() {
+var updateScore = function () {
 scoreText.textContent = 'Score =' + score;
+
+localStorage.setItem('score', score);
+
 }
+
+
 
 // ===================================================================== local storage
 
-const saveToLocalStorage = () => {
-    localStorage.setItem('score', score);
-
-};
+// const saveToLocalStorage = () => {
+//     localStorage.setItem('score', score);
+//     localStorage.setItem('username', username );
+// };
 
 
 
 // hide the buttons display the score and a form to submit intials
 
-function endGame(){
+var endGameI = function (){
+    if (currentQsIndex == 4) {
+        questionContainer.classList.add('hide')
+        gameOverScreen.classList.remove('hide')
+        gameOverScreen.classList.add('gameOverScreen')
+    }
+}
 
+var endGameTime = function (){
+        questionContainer.classList.add('hide')
+        gameOverScreen.classList.remove('hide')
+        gameOverScreen.classList.add('gameOverScreen')
+    
 }
 
 
 
+endGameI()
+
+
+
 // ============================================//need a function to render results. 
-//===================================
 // ================================== Event Listener
 
 startButton.addEventListener('click', startGame);
@@ -145,22 +169,11 @@ startButton.addEventListener('click', startGame);
 
 //timer, score, highscore page
 
-
-
-
-
-
-
-
-
-
-
-
 var startTimerCount = function() {
 
     
     
-    let timerValue = 60
+    
     
     var timerMinusSeconds = function (){
         timerValue --
@@ -168,11 +181,14 @@ var startTimerCount = function() {
         let timerCountdown = document.getElementById('timercountdowntext');
         timerCountdown.innerHTML = "Time =" + timerValue;
         
-        if (timerValue == 0){
+        if (timerValue <= 0){
             clearInterval(timerDown)
+            endGameTime();
+
         }
     }
     
     const timerDown = setInterval(timerMinusSeconds,1000)
 }
+
 

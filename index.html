@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Quiz</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">       
@@ -13,12 +13,15 @@
 <body>
     <header class="header">
 
-        <h2 class="scoretext">
+        <a href="highscores.html"> <h2 class="scoretext">
             View highscore
-            </h2>
-        <h1>
-            Javascript quiz
-        </h1>
+            </h2></a>
+
+            <a href="index.html">
+                <h1>
+                    Javascript quiz
+                </h1>
+            </a>
         
         <div class="timertext">
             <p id="timercountdowntext">
@@ -30,6 +33,13 @@
         </div>
     </header>
 
+    
+    <div id="gameOverScreen" class="hide">
+        <h2 class="gameOverTitle">Game Over!</h2>
+        <h2 id="GameOverScoreID" class="gameOverScore">Your score is</h2>
+        <a href="highscores.html"><button class="endgamebtn btn">Click here to enter score</button></a>
+    </div>
+
     <section id="startcontainerid" class="startcontainer">
         <p class="startpara">
             Welcome to the coding quiz
@@ -37,8 +47,8 @@
         <button class="start--btn, btn" id="start__btn">Start!</button>
     </section>
 
-    <main id="questioncontainer" class=" hide">
-        <section class="maincolumn">
+    <main id="questionContainer" class=" hide">
+        <section id="maincolumnid" class="maincolumn">
 
             
             <p id="questiontext">Example Question</p>
@@ -58,6 +68,7 @@
 
 
 
-    <script src="assets/scripttest.js"></script>
+
+    <script src="assets/js/scriptindex.js"></script>
 </body>
 </html>

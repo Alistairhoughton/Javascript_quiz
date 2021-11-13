@@ -80,3 +80,14 @@ p {
     flex-direction: column;
     text-align: center
 }
+
+.gameOverScreen {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+
+}
+
