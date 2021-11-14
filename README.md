@@ -2,11 +2,7 @@
 
 ## About
 
-I was tasked with creating a quiz in Javascript with a number of features. 
-
-Markup : - Time
-              - reduce the score when the answer was wrong
-                  - storing the score and displaying the stored score at the end of the quiz
+I was tasked with creating a quiz in Javascript with a number of features. For example having a timer and storing the score at the end of the quiz. 
           
 
 The buttons are created dynamically through JS once you are through to the quiz see the image below for a snippet of the code
