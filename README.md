@@ -4,9 +4,10 @@
 
 I was tasked with creating a quiz in Javascript with a number of features. 
 
--Timed
--Reduce the score and time when the score is wrong
--storing the score and displaying the stored score even after refresh
+Markup : - Time
+              - reduce the score when the answer was wrong
+                  - storing the score and displaying the stored score at the end of the quiz
+          
 
 The buttons are created dynamically through JS once you are through to the quiz see the image below for a snippet of the code
 
